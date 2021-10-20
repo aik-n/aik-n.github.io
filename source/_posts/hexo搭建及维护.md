@@ -8,15 +8,14 @@ hide: false
 cover: true
 coverImg: /images/1.jpg
 password: 
-toc: false
-mathjax: false
+toc: true
+mathjax: true
 summary: 记录了Hexo如何从0进行搭建以及后续的维护工作
 categories: Hexo
 tags:
   - Hexo
   - git
   - node.js
-
 ---
 
 # 基于Hexo的博客搭建及维护
@@ -125,6 +124,7 @@ http://localhost:4000/ 		# 本地访问网页的地址，可以查看初始效�
   
   即可通过https://aik-n.gitee.io/来访问自己的博客
   
+
 ---
 
 ## 后续维护
@@ -289,12 +289,10 @@ hexo backup
 
 1. 下载[Git](http://git-scm.com/)和[Node.js](https://nodejs.org/en/)并安装
 
-2. ```
-   git clone 仓库地址
-   ```
-
+3. `git clone 仓库地址`
+   
    或者直接把项目包下载下来解压
-
+   
 3. 在项目文件夹中安装Hexo框架以及后续部署使用的git部署插件，**切记不要用~~hexo init~~把项目初始化了**。
 
    ```
