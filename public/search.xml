@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo搭建及维护</title>
+      <link href="/2021/10/20/hexo-da-jian-ji-wei-hu/"/>
+      <url>/2021/10/20/hexo-da-jian-ji-wei-hu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基于Hexo的博客搭建及维护"><a href="#基于Hexo的博客搭建及维护" class="headerlink" title="基于Hexo的博客搭建及维护"></a>基于Hexo的博客搭建及维护</h1><p>本文将说明如何搭建一个自己的Hexo博客，以及后续如何对该博客进行维护。</p><h2 id="基础搭建"><a href="#基础搭建" class="headerlink" title="基础搭建"></a>基础搭建</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>安装以下应用：</p><ul><li><a href="http://git-scm.com/">Git</a></li><li><a href="https://nodejs.org/en/">Node.js</a></li></ul><p>安装完成以后可以通过命令行的方式查看版本号</p><p>打开CMD</p><pre class="line-numbers language-none"><code class="language-none">git --version   # 查看git版本号node# 查看node.js版本号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>都能正确显示则表示可以进行下一步了。</p><h3 id="Hexo的安装"><a href="#Hexo的安装" class="headerlink" title="Hexo的安装"></a>Hexo的安装</h3><p>新建一个文件夹，后续所有操作都在此文件夹下进行。</p><p>安装淘宝的cnpm管理器，可能会提升后续的安装速度（可选），如安装失败则后续还是使用npm进行安装</p><pre class="line-numbers language-none"><code class="language-none">npm -vnpm install -g cnpm --registry=http://registry.npm.taobao.orgcnpm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>使用npm或者cnpm安装Hexo框架</p><pre class="line-numbers language-none"><code class="language-none">npm install -g hexo-clihexo -v# 查看hexo版本信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>初始化一个博客</p><pre class="line-numbers language-none"><code class="language-none">hexo init# 初始化博客hexo s# 启动本地blog服务http://localhost:4000/ # 本地访问网页的地址，可以查看初始效果<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="通过把博客部署到Github上来进行访问"><a href="#通过把博客部署到Github上来进行访问" class="headerlink" title="通过把博客部署到Github上来进行访问"></a>通过把博客部署到Github上来进行访问</h3><p>在Github上创建一个新的仓库（以自己的为例）aik-n.github.io</p><p>然后在文件夹中安装git部署插件</p><pre class="line-numbers language-none"><code class="language-none">npm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>配置文件夹中的配置文件_config.yml</p><pre class="line-numbers language-none"><code class="language-none"># Deployment## Docs: https://hexo.io/docs/deployment.htmldeploy:  type: git repo: https://github.com/YourGithubName/YourGithubName.github.io.git  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>之后通过hexo命令将博客部署到Github的仓库中去</p><pre class="line-numbers language-none"><code class="language-none">hexo clean# 清理一下hexo g# 生成hexo d# 部署到远程Github仓库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>即可通过<a href="https://aik-n.github.io/%E6%9D%A5%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2">https://aik-n.github.io/来访问自己的博客</a></p><h2 id="后续维护"><a href="#后续维护" class="headerlink" title="后续维护"></a>后续维护</h2><p>此时在Github上查看仓库中的文件可以发现和本地的文件并不相同，它只包含了网页的静态页面，像是主题以及文章源文件都是不在里面的。因此我们需要将源文件也上传到仓库里去，这样才能方便我们后续的维护工作。</p><h3 id="创建一个分支"><a href="#创建一个分支" class="headerlink" title="创建一个分支"></a>创建一个分支</h3><p>在Github博客的仓库中创建一个分支source,并将其设置为默认分支</p><p>在文件夹中进行以下操作：</p><pre class="line-numbers language-none"><code class="language-none">git init# 建立本地git仓库gitgit remote add origin https://xxx@xx.git # （将本地的仓库关联到GitHub（码云）上对应的仓库，后面的https链接改成GitHub（码云）上对应的仓库的.git地址）git add .git commit -m"提交信息"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> git </tag>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/10/19/hello-world/"/>
+      <url>/2021/10/19/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>typora-vue-theme主题介绍</title>
+      <link href="/2021/10/19/test/"/>
+      <url>/2021/10/19/test/</url>
+      
+        <content type="html"><![CDATA[<p>12312313</p><p>test</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
