@@ -144,5 +144,5 @@ backup:
   type: git     
   message: hexo blog source   
   repository:  
-    # github: git@github.com:aik-n/aik-n.github.io.git,source #这里改成你自己的，分钟“source”也改成自己的，如果Github不存在会自动新建
+    github: git@github.com:aik-n/aik-n.github.io.git,source #这里改成你自己的，分钟“source”也改成自己的，如果Github不存在会自动新建
     gitee: git@gitee.com:aik-n/aik-n.github.io.git,source #这里改成你自己的，分钟“source”也改成自己的，如果Github不存在会自动新建
