@@ -106,7 +106,7 @@ http://localhost:4000/ 		# 本地访问网页的地址，可以查看初始效�
 
 - 部署在Gitee上
 
-  在Gitee上创建一个新的仓库，名字自己取
+  在Gitee上创建一个新的仓库，名字自己取（**建议用用户名，后面会说明原因**）
   
   然后在文件夹中安装git部署插件（上面安装过了这边就不用了）
   
@@ -122,7 +122,23 @@ http://localhost:4000/ 		# 本地访问网页的地址，可以查看初始效�
   hexo d			# 部署到远程Git仓库
   ```
   
-  即可通过https://aik-n.gitee.io/来访问自己的博客
+  即可通过https://aik-n.gitee.io/blog来访问自己的博客
+  
+  **注：**如果打开的页面无css样式，有以下解决方法：
+  
+  **方法一**：需要去配置文件_config.yml中修改参数
+  
+  ```
+  # URL
+  ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+  url: https://gitee.com/aik-n/blog.git
+  root: /blog
+  ```
+  
+  但这样会出现一个问题，就是地址和路径只能填一个，导致如果同时在GitHub和Gitee上部署的话会有一边无法加载出Css样式，建议采用下面的方法。
+  
+  **方法二**：通过建立一个与自己个性仓库同名的仓库，如https://gitee.com/aik-n这个用户，创建站点并且不想以子目录的方式访问，那么就可以创建名为aik-n的仓库https://gitee.com/aik-n/aik-n，这样再部署完成后就可以直接通过https://aik-n.gitee.io进行访问。
+  
   
 
 ---

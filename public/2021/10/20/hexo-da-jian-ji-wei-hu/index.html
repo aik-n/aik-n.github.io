@@ -430,21 +430,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-20
+                    2021-10-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -519,7 +519,7 @@ hexo d			# 部署到远程Git仓库<span aria-hidden="true" class="line-numbers-
 <p>即可通过<a target="_blank" rel="noopener" href="https://aik-n.github.io/%E6%9D%A5%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2">https://aik-n.github.io/来访问自己的博客</a></p>
 </li>
 <li><p>部署在Gitee上</p>
-<p>在Gitee上创建一个新的仓库，名字自己取</p>
+<p>在Gitee上创建一个新的仓库，名字自己取（<strong>建议用用户名，后面会说明原因</strong>）</p>
 <p>然后在文件夹中安装git部署插件（上面安装过了这边就不用了）</p>
 <pre class="line-numbers language-none"><code class="language-none">npm install --save hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -528,7 +528,16 @@ hexo d			# 部署到远程Git仓库<span aria-hidden="true" class="line-numbers-
 hexo g			# 生成
 hexo d			# 部署到远程Git仓库<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>即可通过<a target="_blank" rel="noopener" href="https://aik-n.gitee.io/%E6%9D%A5%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2">https://aik-n.gitee.io/来访问自己的博客</a></p>
+<p>即可通过<a target="_blank" rel="noopener" href="https://aik-n.gitee.io/blog%E6%9D%A5%E8%AE%BF%E9%97%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2">https://aik-n.gitee.io/blog来访问自己的博客</a></p>
+<p><strong>注：</strong>如果打开的页面无css样式，有以下解决方法：</p>
+<p><strong>方法一</strong>：需要去配置文件_config.yml中修改参数</p>
+<pre class="line-numbers language-none"><code class="language-none"># URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://gitee.com/aik-n/blog.git
+root: /blog<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>但这样会出现一个问题，就是地址和路径只能填一个，导致如果同时在GitHub和Gitee上部署的话会有一边无法加载出Css样式，建议采用下面的方法。</p>
+<p><strong>方法二</strong>：通过建立一个与自己个性仓库同名的仓库，如<a target="_blank" rel="noopener" href="https://gitee.com/aik-n%E8%BF%99%E4%B8%AA%E7%94%A8%E6%88%B7%EF%BC%8C%E5%88%9B%E5%BB%BA%E7%AB%99%E7%82%B9%E5%B9%B6%E4%B8%94%E4%B8%8D%E6%83%B3%E4%BB%A5%E5%AD%90%E7%9B%AE%E5%BD%95%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BF%E9%97%AE%EF%BC%8C%E9%82%A3%E4%B9%88%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%88%9B%E5%BB%BA%E5%90%8D%E4%B8%BAaik-n%E7%9A%84%E4%BB%93%E5%BA%93https://gitee.com/aik-n/aik-n%EF%BC%8C%E8%BF%99%E6%A0%B7%E5%86%8D%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90%E5%90%8E%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E9%80%9A%E8%BF%87https://aik-n.gitee.io%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE%E3%80%82">https://gitee.com/aik-n这个用户，创建站点并且不想以子目录的方式访问，那么就可以创建名为aik-n的仓库https://gitee.com/aik-n/aik-n，这样再部署完成后就可以直接通过https://aik-n.gitee.io进行访问。</a></p>
 </li>
 </ul>
 <hr>
@@ -1168,7 +1177,7 @@ npm install --save hexo-deployer-git		# git部署插件<span aria-hidden="true" 
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2k</span>&nbsp;字
+                class="white-color">2.2k</span>&nbsp;字
             
             
             
