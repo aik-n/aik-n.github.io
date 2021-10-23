@@ -138,7 +138,7 @@ deploy:
   type: 'git'
   repo:
     github: git@github.com:aik-n/aik-n.github.io.git
-    gitee: git@gitee.com:aik-n/aik-n.github.io.git
+    gitee: git@gitee.com:aik-n/blog.git
   branch: master
 backup:
   type: git     
