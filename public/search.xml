@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2021/10/23/python-ji-qi-xue-xi/"/>
+      <url>/2021/10/23/python-ji-qi-xue-xi/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-none"><code class="language-none">title: Python机器学习入门date: 2021.10.21author: Aikimg: /source/images/xxx.jpgtop: truehide: falsecover: truecoverImg: /images/1.jpgpassword: toc: truemathjax: truesummary: 记录了自己入门机器学习的过程categories: Hexotags:  - Python  - 机器学习<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="Python机器学习入门"><a href="#Python机器学习入门" class="headerlink" title="Python机器学习入门"></a>Python机器学习入门</h1><p>机器学习就是通过算法让计算机能够从数据中提取出有用的信息，并且能够按我们的需要对它进行决策判断，最后得到我们希望得到的结果，也就是从数据-模型-预测的一个过程。</p><h2 id="机器学习概述"><a href="#机器学习概述" class="headerlink" title="机器学习概述"></a>机器学习概述</h2><h3 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h3><ul><li><p>监督学习</p><ul><li><p>定义：输入数据是由输入特征值和目标值所组成。函数的输出可以是一个连续的值（称为回归），或输出是有限个离散值（称作分类）。</p></li><li><p>目标值：类别 —— 分类问题</p><ul><li>k-近邻算法、贝叶斯分类、决策树与随机森林、逻辑回归</li></ul></li><li><p>目标值：连续型的数据 —— 回归问题</p><ul><li>线性回归、岭回归</li></ul></li></ul></li><li><p>无监督学习</p><ul><li>定义：输入数据是由输入特征值所组成。</li><li>目标值：无 —— 无监督学习<ul><li>聚类 k-means</li></ul></li></ul></li></ul><p>例：</p><ol><li>预测明天的气温是多少度？  回归</li><li>预测明天是阴、晴还是雨？  分类</li><li>人脸年龄预测？  回归/分类</li><li>人脸识别？  分类</li></ol><h3 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h3><ol><li>获取原始数据 - 数据集</li><li>数据预处理</li><li>特征工程 - 处理成能被算法使用的数据</li><li>选择合适的机器学习算法训练，得到模型</li><li>模型评估，查看训练的效果</li><li>模型应用</li></ol><h3 id="学习库和使用框架"><a href="#学习库和使用框架" class="headerlink" title="学习库和使用框架"></a>学习库和使用框架</h3><ul><li><p>sklearn</p></li><li><p>PyTorch</p></li><li><p>TensorFlow</p></li></ul><h2 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h2><h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>数据集分为训练集和测试集，通常在进行模型训练时会将数据集的训练集和测试集进行7：3分或者8：2分。</p><p>初学时可以使用sklearn里自带的数据集，它的数据量较小，方便学习。也可以通过去Kaggle等平台上进行寻找别人提供的数据集，最终大部分情况还是需要自己进行数据集的构建，利用爬虫等进行数据采集。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo搭建及维护</title>
       <link href="/2021/10/20/hexo-da-jian-ji-wei-hu/"/>
       <url>/2021/10/20/hexo-da-jian-ji-wei-hu/</url>

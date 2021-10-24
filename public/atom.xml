@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-23T02:44:01.611Z</updated>
+  <updated>2021-10-23T11:33:32.829Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/10/23/python-ji-qi-xue-xi/"/>
+    <id>http://example.com/2021/10/23/python-ji-qi-xue-xi/</id>
+    <published>2021-10-23T03:24:38.162Z</published>
+    <updated>2021-10-23T11:33:32.829Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;title: Python机器学习入门
+date: 2021.10.21
+author: Aik
+img:</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo搭建及维护</title>
