@@ -323,6 +323,8 @@ hexo backup
    git config --global user.name "XXX"
    git config --global user.email  "XXX@gmail.com"
    ```
+   
+   可能也还需要配置SSH
 
 ## 附录
 

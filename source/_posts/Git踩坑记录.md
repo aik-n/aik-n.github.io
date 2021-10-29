@@ -29,4 +29,8 @@ tags:
 ```
 git rm --cached public/ -r
 ```
+可以查看在你上次提交之后是否有对文件进行再次修改，此时能看到有delete记录
+```
+git status	
+```
 
