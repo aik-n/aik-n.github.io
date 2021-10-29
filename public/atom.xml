@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-23T11:33:32.829Z</updated>
+  <updated>2021-10-26T15:00:45.144Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,26 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://example.com/2021/10/23/python-ji-qi-xue-xi/"/>
-    <id>http://example.com/2021/10/23/python-ji-qi-xue-xi/</id>
-    <published>2021-10-23T03:24:38.162Z</published>
-    <updated>2021-10-23T11:33:32.829Z</updated>
+    <title>Python机器学习入门</title>
+    <link href="http://example.com/2021/10/21/python-ji-qi-xue-xi/"/>
+    <id>http://example.com/2021/10/21/python-ji-qi-xue-xi/</id>
+    <published>2021-10-20T16:00:00.000Z</published>
+    <updated>2021-10-26T15:00:45.144Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;title: Python机器学习入门
-date: 2021.10.21
-author: Aik
-img:</summary>
+    <summary type="html">&lt;h1 id=&quot;Python机器学习入门&quot;&gt;&lt;a href=&quot;#Python机器学习入门&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
