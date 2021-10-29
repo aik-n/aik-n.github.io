@@ -34,3 +34,5 @@ git rm --cached public/ -r
 git status	
 ```
 
+### git pull
+
