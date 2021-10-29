@@ -430,14 +430,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-23
+                    2021-10-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.2k
                 </div>
                 
 
@@ -643,10 +643,12 @@ git remote rename 老别名 新别名		# 修改仓库名<span aria-hidden="true"
 <p>或者直接把项目包下载下来解压</p>
 </li>
 <li><p>在项目文件夹中安装Hexo框架以及后续部署使用的git部署插件，<strong>切记不要用<del>hexo init</del>把项目初始化了</strong>。</p>
-<pre class="line-numbers language-none"><code class="language-none">npm install -g hexo-cli			# Hexo框架安装
-npm install --save hexo-deployer-git		# git部署插件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>之后由于配置文件都是直接从云拉下来的，所以不用再进行更改了，直接hexo三联进行部署，git push进行后续维护。</p>
-</li>
+<pre class="line-numbers language-none"><code class="language-none">npm install
+npm install -g hexo-cli			# Hexo框架安装（这一步可能不需要）
+npm install --save hexo-deployer-git		# git部署插件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>之后由于配置文件都是直接从云拉下来的，所以不用再进行更改了，直接hexo三联进行部署，git push进行后续维护，在进行备份时，记得配置好下面这两项：</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git config --global user.name <span class="token string">"XXX"</span>
+git config --global user.email  <span class="token string">"XXX@gmail.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ol>
 
                 
@@ -944,35 +946,55 @@ npm install --save hexo-deployer-git		# git部署插件<span aria-hidden="true" 
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/19/hello-world/">
+                <a href="/2021/10/20/hexo-da-jian-ji-wei-hu/">
                     <div class="card-image">
                         
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="Hexo搭建及维护">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Hexo搭建及维护</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            记录了Hexo如何从0进行搭建以及后续的维护工作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Aik
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/node-js/">
+                        <span class="chip bg-color">node.js</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1171,7 +1193,7 @@ npm install --save hexo-deployer-git		# git部署插件<span aria-hidden="true" 
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.5k</span>&nbsp;字
+                class="white-color">4k</span>&nbsp;字
             
             
             

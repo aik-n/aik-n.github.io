@@ -312,7 +312,8 @@ hexo backup
 3. 在项目文件夹中安装Hexo框架以及后续部署使用的git部署插件，**切记不要用~~hexo init~~把项目初始化了**。
 
    ```
-   npm install -g hexo-cli			# Hexo框架安装
+   npm install
+   npm install -g hexo-cli			# Hexo框架安装（这一步可能不需要）
    npm install --save hexo-deployer-git		# git部署插件
    ```
 
@@ -323,3 +324,24 @@ hexo backup
    git config --global user.email  "XXX@gmail.com"
    ```
 
+## 附录
+
+Hexo的源文件说明：
+
+ 1. `_config.yml`站点的配置文件，需要拷贝；
+
+2. `themes/`主题文件夹，需要拷贝；
+3. `source`博客文章的.md文件，需要拷贝；
+4. `scaffolds/`文章的模板，需要拷贝；
+5. `package.json`安装包的名称，需要拷贝；
+6. `.gitignore`限定在push时哪些文件可以忽略，需要拷贝；
+
+7. `.git/`主题和站点都有，标志这是一个git项目，不需要拷贝；
+
+8. `node_modules/`是安装包的目录，在执行npm install的时候会重新生成，不需要拷贝；
+
+9. `public`是hexo g生成的静态网页，不需要拷贝；
+
+10. `.deploy_git`同上，hexo g也会生成，不需要拷贝；
+
+11. `db.json`文件，不需要拷贝。

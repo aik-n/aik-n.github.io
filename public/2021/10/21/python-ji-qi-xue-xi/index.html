@@ -426,21 +426,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-26
+                    2021-10-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -520,22 +520,22 @@
 <li><p>sklearn数据集的简单使用：</p>
 <p>安装库：<code> pip install Sklearn</code></p>
 <p>然后在.py文件开头导入包：<code>from sklearn.datasets import load_iris</code></p>
-<pre class="line-numbers language-none"><code class="language-none">from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_iris
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> train_test_split
 
-# 鸢尾花数据集查看
-def getDataSource():
-    iris = load_iris()
-    # 返回的是一个Bunch类型(继承自字典的类型)，所以可以用调用字典的方式去获取到相应的键值对数据
-    print("鸢尾花数据集：\n", iris)
-    print("查看数据集描述：\n", iris["DESCR"])
-    print("查看特征值的名字：\n", iris.feature_names)
-    print("查看特征值：\n", iris.data, iris.data.shape)
+<span class="token comment"># 鸢尾花数据集查看</span>
+<span class="token keyword">def</span> <span class="token function">getDataSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    iris <span class="token operator">=</span> load_iris<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># 返回的是一个Bunch类型(继承自字典的类型)，所以可以用调用字典的方式去获取到相应的键值对数据</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"鸢尾花数据集：\n"</span><span class="token punctuation">,</span> iris<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查看数据集描述：\n"</span><span class="token punctuation">,</span> iris<span class="token punctuation">[</span><span class="token string">"DESCR"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查看特征值的名字：\n"</span><span class="token punctuation">,</span> iris<span class="token punctuation">.</span>feature_names<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"查看特征值：\n"</span><span class="token punctuation">,</span> iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>data<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
 
-    # 数据集划分
-    x_train, x_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2)
-    print("训练集的特征值:\n", x_train, x_train.shape)
-    return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+    <span class="token comment"># 数据集划分</span>
+    x_train<span class="token punctuation">,</span> x_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>iris<span class="token punctuation">.</span>data<span class="token punctuation">,</span> iris<span class="token punctuation">.</span>target<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"训练集的特征值:\n"</span><span class="token punctuation">,</span> x_train<span class="token punctuation">,</span> x_train<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="特征工程介绍"><a href="#特征工程介绍" class="headerlink" title="特征工程介绍"></a>特征工程介绍</h3><p><strong>数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。</strong></p>
 <p>特征工程是使用专业背景知识和技巧处理数据，使得特征能在机器学习算法上发挥更好的作用的过程。（会直接影响机器学习的效果）</p>
@@ -561,19 +561,19 @@ def getDataSource():
 </li>
 </ul>
 <p>下面为字典特征提取的一个例子</p>
-<pre class="line-numbers language-none"><code class="language-none">from sklearn.feature_extraction import DictVectorizer
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>feature_extraction <span class="token keyword">import</span> DictVectorizer
 
-def dict_demo():
-    # 字典特征提取       -&gt;one-hot编码
-    data = [{'city': '北京', 'temperature': 100}, {'city': '上海', 'temperature': 60}, {'city': '深圳', 'temperature': 30}]
-    # 实例化一个转换器类
-    transfer = DictVectorizer(sparse=False)  # 默认返回的是sparse稀疏矩阵（用下标来表示位置，不表示0的位置，可以节省内存，提高加载效率），False则返回二维数组
-    # 调用fit_transform()
-    data_new = transfer.fit_transform(data)
-    print("data_new：\n", data_new)
-    print("特征名字：\n", transfer.get_feature_names())
+<span class="token keyword">def</span> <span class="token function">dict_demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 字典特征提取       -&gt;one-hot编码</span>
+    data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'北京'</span><span class="token punctuation">,</span> <span class="token string">'temperature'</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'上海'</span><span class="token punctuation">,</span> <span class="token string">'temperature'</span><span class="token punctuation">:</span> <span class="token number">60</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string">'city'</span><span class="token punctuation">:</span> <span class="token string">'深圳'</span><span class="token punctuation">,</span> <span class="token string">'temperature'</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token comment"># 实例化一个转换器类</span>
+    transfer <span class="token operator">=</span> DictVectorizer<span class="token punctuation">(</span>sparse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>  <span class="token comment"># 默认返回的是sparse稀疏矩阵（用下标来表示位置，不表示0的位置，可以节省内存，提高加载效率），False则返回二维数组</span>
+    <span class="token comment"># 调用fit_transform()</span>
+    data_new <span class="token operator">=</span> transfer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"data_new：\n"</span><span class="token punctuation">,</span> data_new<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"特征名字：\n"</span><span class="token punctuation">,</span> transfer<span class="token punctuation">.</span>get_feature_names<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    return None<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>one-hot编码就是对类别进行二进制化的操作，在数据集中有多少个类别特征就分成多少列，每份数据占一行，例如对下面数据进行one-hot编码：</p>
 <table>
@@ -633,7 +633,66 @@ def dict_demo():
 <li>CountVectorizer.get_feature_names()    返回值：单词列表</li>
 <li>sklearn.feature_extraction.text.TfidfVectorizer</li>
 </ul>
-<p>一般是把一个个单词作为特征</p>
+<p>一般是把一个个单词作为特征，也叫特征词。</p>
+<p>例如对下面数据进行特征提取：</p>
+<pre class="line-numbers language-none"><code class="language-none">["life is short,i like python",
+life is too long ,i dislike python]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>提取以后的结果就是：</p>
+<pre class="line-numbers language-none"><code class="language-none">['dislike','is','life','like',long','python','short','too']
+[[0 1 1 1 0 1 1 0]
+ [1 1 1 0 1 1 0 1]]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>下面是调用CountVectorizer的实例：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">count_demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    文本特征抽取：CountVecotrizer
+    :return:
+    """</span>
+    data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"life is short,i like like python"</span><span class="token punctuation">,</span> <span class="token string">"life is too long,i dislike python"</span><span class="token punctuation">]</span>
+    <span class="token comment"># 1、实例化一个转换器类</span>
+    transfer <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span>stop_words<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"is"</span><span class="token punctuation">,</span> <span class="token string">"too"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 2、调用fit_transform</span>
+    data_new <span class="token operator">=</span> transfer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"data_new:\n"</span><span class="token punctuation">,</span> data_new<span class="token punctuation">.</span>toarray<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>		<span class="token comment"># 通过.toarray转成数组</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"特征名字：\n"</span><span class="token punctuation">,</span> transfer<span class="token punctuation">.</span>get_feature_names<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>对于一段英文可以通过这种方式进行简单的特征提取，但是如果对象是一段中文那么问题就来了。例如下面这个例子：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">count_chinese_demo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    中文文本特征抽取：CountVecotrizer
+    :return:
+    """</span>
+    data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"我爱北京天安门"</span><span class="token punctuation">,</span> <span class="token string">"天安门上太阳升"</span><span class="token punctuation">]</span>
+    <span class="token comment"># 1、实例化一个转换器类</span>
+    transfer <span class="token operator">=</span> CountVectorizer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 2、调用fit_transform</span>
+    data_new <span class="token operator">=</span> transfer<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"data_new:\n"</span><span class="token punctuation">,</span> data_new<span class="token punctuation">.</span>toarray<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"特征名字：\n"</span><span class="token punctuation">,</span> transfer<span class="token punctuation">.</span>get_feature_names<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token boolean">None</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>结果如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">data_new:
+ [[0 1]
+ [1 0]]
+特征名字：
+ ['天安门上太阳升', '我爱北京天安门']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可以看到，返回的结果并不是我们想要的，因为它直接把两句话当成了特征词，而我们需要的是把一个个词作为特征词，那么得需要将上面的data改成<code>data = ["我 爱 北京 天安门", "天安门 上 太阳 升"]</code>，手动添加空格进行分割，这样才能按我们需求返回特征，也就是如下的结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">data_new:
+ [[1 1 0]
+ [0 1 1]]
+特征名字：
+ ['北京', '天安门', '太阳']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="jieba分词处理"><a href="#jieba分词处理" class="headerlink" title="jieba分词处理"></a>jieba分词处理</h4><p>想要对中文更加有效的进行分词的话，我们则需要使用到jieba分词。</p>
+<p>很简单，先安装jieba库<code>pip install jieba</code>，然后只需要调用<code>jieba.cut()</code>，则会返回词语组成的生成器。</p>
 
                 
             </div>
@@ -873,53 +932,36 @@ def dict_demo():
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/21/python-ji-qi-xue-xi/">
+                <a href="/2021/10/29/hello-world/">
                     <div class="card-image">
                         
-                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="Python机器学习入门">
                         
-                        <span class="card-title">Python机器学习入门</span>
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录了自己入门机器学习的过程
+                            
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="post-category">
-                                    机器学习
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Aik
                             
                         </span>
                     </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">机器学习</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1174,7 +1216,7 @@ def dict_demo():
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.5k</span>&nbsp;字
+                class="white-color">4k</span>&nbsp;字
             
             
             
