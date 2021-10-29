@@ -316,5 +316,5 @@ hexo backup
    npm install --save hexo-deployer-git		# git部署插件
    ```
 
-4. 之后由于配置文件都是直接从云拉下来的，所以不用再进行更改了，直接hexo三联进行部署，git push进行后续维护。
+4. 之后由于配置文件都是直接从云拉下来的，所以不用再进行更改了，直接hexo三联进行部署，git push进行后续维护，在进行备份时，记得配置好SSH.
 

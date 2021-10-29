@@ -78,7 +78,7 @@ tags:
 
   然后在.py文件开头导入包：``from sklearn.datasets import load_iris``
 
-  ```
+  ```python
   from sklearn.datasets import load_iris
   from sklearn.model_selection import train_test_split
   
@@ -129,7 +129,7 @@ tags:
 
 下面为字典特征提取的一个例子
 
-```
+```python
 from sklearn.feature_extraction import DictVectorizer
 
 def dict_demo():
@@ -171,5 +171,86 @@ one-hot编码就是对类别进行二进制化的操作，在数据集中有多�
 - CountVectorizer.get_feature_names()    返回值：单词列表
 - sklearn.feature_extraction.text.TfidfVectorizer
 
-一般是把一个个单词作为特征
+一般是把一个个单词作为特征，也叫特征词。
+
+例如对下面数据进行特征提取：
+
+```
+["life is short,i like python",
+life is too long ,i dislike python]
+```
+
+提取以后的结果就是：
+
+```
+['dislike','is','life','like',long','python','short','too']
+[[0 1 1 1 0 1 1 0]
+ [1 1 1 0 1 1 0 1]]
+```
+
+下面是调用CountVectorizer的实例：
+
+```python
+def count_demo():
+    """
+    文本特征抽取：CountVecotrizer
+    :return:
+    """
+    data = ["life is short,i like like python", "life is too long,i dislike python"]
+    # 1、实例化一个转换器类
+    transfer = CountVectorizer(stop_words=["is", "too"])
+
+    # 2、调用fit_transform
+    data_new = transfer.fit_transform(data)
+    print("data_new:\n", data_new.toarray())		# 通过.toarray转成数组
+    print("特征名字：\n", transfer.get_feature_names())
+
+    return None
+```
+
+对于一段英文可以通过这种方式进行简单的特征提取，但是如果对象是一段中文那么问题就来了。例如下面这个例子：
+
+```python
+def count_chinese_demo():
+    """
+    中文文本特征抽取：CountVecotrizer
+    :return:
+    """
+    data = ["我爱北京天安门", "天安门上太阳升"]
+    # 1、实例化一个转换器类
+    transfer = CountVectorizer()
+
+    # 2、调用fit_transform
+    data_new = transfer.fit_transform(data)
+    print("data_new:\n", data_new.toarray())
+    print("特征名字：\n", transfer.get_feature_names())
+
+    return None
+```
+
+结果如下：
+
+```
+data_new:
+ [[0 1]
+ [1 0]]
+特征名字：
+ ['天安门上太阳升', '我爱北京天安门']
+```
+
+可以看到，返回的结果并不是我们想要的，因为它直接把两句话当成了特征词，而我们需要的是把一个个词作为特征词，那么得需要将上面的data改成``data = ["我 爱 北京 天安门", "天安门 上 太阳 升"]``，手动添加空格进行分割，这样才能按我们需求返回特征，也就是如下的结果：
+
+```
+data_new:
+ [[1 1 0]
+ [0 1 1]]
+特征名字：
+ ['北京', '天安门', '太阳']
+```
+
+#### jieba分词处理
+
+想要对中文更加有效的进行分词的话，我们则需要使用到jieba分词。
+
+很简单，先安装jieba库``pip install jieba``，然后只需要调用``jieba.cut()``，则会返回词语组成的生成器。
 
