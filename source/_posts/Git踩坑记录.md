@@ -36,3 +36,18 @@ git status
 
 ### git pull
 
+直接用
+
+```
+git pull origin source
+```
+
+或者用下面的：
+
+```
+git fetch origin master:temp//从远程仓库获取新版本并创建一个temp分支
+git diff temp //比较分支master和刚下载下来的temp分支的差异
+git merge temp //比较过后，你觉得没有问题就可以将temp分支合并到master分支
+git branch -d temp //你不想保留temp分支，就可以使用这个命令删除temp分支
+```
+
