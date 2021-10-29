@@ -14,7 +14,7 @@ summary: 记录了Hexo如何从0进行搭建以及后续的维护工作
 categories: Hexo
 tags:
   - Hexo
-  - git
+  - Git
   - node.js
 ---
 
