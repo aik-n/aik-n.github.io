@@ -24,7 +24,7 @@ tags:
 
 比如一些配置文件，本地还要，直接删除仓库中的文件，也就删除了跟踪，提交上去后再配置gitignore就生效了
 
-先执行git rm --cached package.json，然后提交上去，后面这个文件的改动就会被忽略了,可能需要 -r
+先执行git rm --cached public/ -r然后提交上去，后面这个文件的改动就会被忽略了,可能需要 -r
 
 ```
 git rm --cached public/ -r
