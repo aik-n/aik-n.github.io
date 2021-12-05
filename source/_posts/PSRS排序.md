@@ -3,9 +3,9 @@ title: 使用C++实现PSRS排序的并行计算
 date: 2021.11.8
 author: Aik
 img: /source/images/xxx.jpg
-top: true
+top: false
 hide: false
-cover: true
+cover: false
 coverImg: /images/1.jpg
 password: 
 toc: true
