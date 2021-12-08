@@ -10,7 +10,7 @@ coverImg: /images/1.jpg
 password: 
 toc: true
 mathjax: true
-summary: 记录了Hexo如何从0进行搭建以及后续的维护工作
+summary: 记录了Hexo如何从0进行搭建以及后续的维护
 categories: Hexo
 tags:
   - Hexo

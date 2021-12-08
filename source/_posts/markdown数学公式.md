@@ -16,11 +16,19 @@ tags:
   - markdown
 ---
 
-**运算符号**
+**符号**
 
-|   符号   | markdown |
-| :------: | :------: |
-| $\times$ |  \times  |
+|    符号    | markdown |
+| :--------: | :------: |
+|  $\times$  |  \times  |
+|  $\cdot$   |  \cdot   |
+| $\bullet$  | \bullet  |
+| $\partial$ | \partial |
+|            |          |
+|            |          |
+|            |          |
+|            |          |
+|            |          |
 
 **矩阵**
 

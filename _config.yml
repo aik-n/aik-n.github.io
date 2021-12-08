@@ -137,9 +137,9 @@ theme: matery
 deploy:
   type: 'git'
   repo:
-#    git@139.224.244.229:/home/git/hexo.git
-    github: git@github.com:aik-n/aik-n.github.io.git
-    gitee: https://gitee.com/aik-n/aik-n.git
+    git@139.224.244.229:/home/git/hexo.git
+    #github: git@github.com:aik-n/aik-n.github.io.git
+    #gitee: https://gitee.com/aik-n/aik-n.git
   branch: master
 backup:
   type: git     
