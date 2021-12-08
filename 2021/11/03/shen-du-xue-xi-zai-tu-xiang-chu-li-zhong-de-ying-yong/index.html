@@ -1,0 +1,1275 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="深度学习在图像处理中的应用, Blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>深度学习在图像处理中的应用 | Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/xxx.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">深度学习在图像处理中的应用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                                <span class="chip bg-color">图像处理</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">深度学习</span>
+                            </a>
+                        
+                            <a href="/tags/PyTorch/">
+                                <span class="chip bg-color">PyTorch</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                深度学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-11-03
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-12-08
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="深度学习在图像处理中的应用"><a href="#深度学习在图像处理中的应用" class="headerlink" title="深度学习在图像处理中的应用"></a>深度学习在图像处理中的应用</h1><p>包括图像分类（AlexNet，VGGNet，GoogLeNet，ResNet）、目标检测以及图像分割等等，使用pytorch进行实现。</p>
+<span id="more"></span>
+<h2 id="1-1-卷积神经网络基础"><a href="#1-1-卷积神经网络基础" class="headerlink" title="1.1 卷积神经网络基础"></a>1.1 卷积神经网络基础</h2><p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1b7411T7DA?spm_id_from=333.999.0.0">卷积神经网络</a></p>
+<h3 id="1-1-1-全连接层"><a href="#1-1-1-全连接层" class="headerlink" title="1.1.1 全连接层"></a>1.1.1 全连接层</h3><p>全连接层，由许许多多的神经元构成而得来的。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201202751850.png" alt="image-20211201202751850" style="zoom: 33%;"><br>将神经元按列进行排列，并且将列与列进行全连接，那么就能得到一个神经网络。<br>BP(back propagation)算法包括<strong>信号的前向传播</strong>和<strong>误差的反向传播</strong>两个过程。即计算误差输出时按从输入到输出的方向进行，而调整权值和阈值则从输出到输入的方向进行。</p>
+<p>如下图的从左到右的正向传播过程中能够得到一个输出值，将这个输出值与我们期望的输出值进行对比，就能得到一个误差值</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201201450959.png" alt="image-20211201201450959" style="zoom: 33%;"></p>
+<p>通过计算每一个节点的偏导数，就能得到每个节点的误差梯度，然后我们将得到的损失值反向应用到损失梯度上，就达到了误差的反向传播过程。</p>
+<p>下面通过一个实例来解释BP神经网络：</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201202024109.png" alt="image-20211201202024109" style="zoom:25%;"></p>
+<p>首先我们读入一张彩色的RGB图像，他的每个像素都含有三个值，就是三个RGB分量。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201202344028.png" alt="image-20211201202344028" style="zoom:25%;"></p>
+<p>然后将它进行灰度化处理，进行灰度化之后，如下图所示，可以看到他的每个像素都只有一个值了。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201203243414.png" alt="image-20211201203243414" style="zoom:25%;"></p>
+<p>最后进行二值化处理就得到了一个黑白图像，如下图</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201203503932.png" alt="image-20211201203503932" style="zoom:25%;"></p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201203555477.png" alt="image-20211201203555477" style="zoom:25%;"></p>
+<p>用五行三列的一个窗口在整个图像上进行滑动，每滑动一次就计算白色像素占整个像素的比例，在滑动到最右侧时要进行越界处理，最后能得到一个$5\times5$的矩阵。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201204013150.png" alt="image-20211201204013150" style="zoom: 25%;"></p>
+<p>把这个$5\times5$的矩阵按行进行展开，拼接成一个行向量。这样就可以把这个行向量当作输入到神经网络的一个<strong>输入层</strong>。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201204252390.png" alt="image-20211201204252390" style="zoom: 25%;"></p>
+<p>one-hot编码是常用的对标签进行编码的一种方式，可以保证最右侧一列每个输出的编码都不同， 这样就得到了一个<strong>输出层</strong>。</p>
+<p>有了输入和期望的输出，就能对网络进行训练了。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201204734587.png" alt="image-20211201204734587" style="zoom:33%;"></p>
+<p>将输入层节点数设为25个，输出层设为10个，中间的隐层按情况进行设置，这样就能对神经网络进行完整的训练了。</p>
+<h3 id="1-1-2-卷积层-CNN中独特的网络结构"><a href="#1-1-2-卷积层-CNN中独特的网络结构" class="headerlink" title="1.1.2 卷积层-CNN中独特的网络结构"></a>1.1.2 卷积层-CNN中独特的网络结构</h3><p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201210505827.png" alt="image-20211201210505827" style="zoom: 33%;"></p>
+<p>卷积就是<strong>一个滑动窗口</strong>在特征图上<strong>滑动并进行计算</strong>。如上图，以一个$3\times3$的卷积核为例，把卷积核覆盖到计算的特征层上面，也就是图中的橙色部分。将值分别进行相乘再相加，得到一个值，也就是粉色部分填写的值。这样每滑动一次能得到一个值，最后将$3\times3$的矩阵值填满也就得到了最终的卷积结果。</p>
+<p><strong>卷积的目的是为了进行图像特征提取</strong></p>
+<p><strong>卷积有两个特性</strong>：</p>
+<ol>
+<li>拥有局部感知机制：因为滑动是局部的</li>
+<li>权值共享：因为在滑动计算过程中卷积核值是固定的</li>
+</ol>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201211158960.png" alt="image-20211201211158960" style="zoom: 33%;"></p>
+<p><strong>对于输入层而言，channel代表图像的通道数量，当输入图像为RGB彩色图像，则channel = 3；如果是灰度图像，则channel = 1。</strong> </p>
+<p><strong>对于卷积核而言，卷积核的深度 = 卷积核channel数</strong></p>
+<ul>
+<li>若当前卷积层的上一层为输入层，则channel数 = 输入图像channel数</li>
+<li>无论输入图像的深度是多少，每经过一个卷积核都将变换为一个深度为1的特征图，一个卷积层之内可定义多个卷积核，当前卷积层上的各个卷积核会对上一层输入的每个feature map（特征图）分别执行卷积操作，即每个卷积核都会对应生成一个新的特征图feature map(不同的卷积核所提取的特征不同)。故而在下一层需要多少个特征图，本层就需要定义多少个卷积核，所以<strong>卷积核的深度与传出的特征图的张数一致</strong>。</li>
+</ul>
+<p>普通的BP神经网络，假设如图中中间的隐藏层为1000个神经元，那么进行全连接时就会有921600000个参数生成。（<strong>参数指连接层之间的权重参数</strong>）</p>
+<p>而卷积神经网络由于每个卷积核是固定的 ，一个卷积层所需要的参数就是25000个，这就体现了之前说的权值共享的特性。</p>
+<p>前面所说的都是在一维的特征向量上进行卷积的，但实际过程中往往都是对多维的特征矩阵进行卷积操作。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201212610650.png" alt="image-20211201212610650" style="zoom: 25%;"></p>
+<p>如上图，如果输入一张彩色的RGB图像，那么就会有R G B三个分量，那么<strong>卷积核的深度也要和输入特征矩阵的深度保持一致</strong>，也要是三维。将卷积核的每个维度放在对应的维度上进行滑动卷积计算，最后再进行求和操作就得到了一个卷积层。</p>
+<p>红色卷积核在第一个位置计算结果为0，绿色卷积核在第一个位置计算结果为0，蓝色卷积核在第一个位置计算结果为1，$0+0+1=1$，那么输出特征矩阵的第一个位置就是1，全部计算完就能得到一个输出特征矩阵。如果我们在用一组卷积核2进行计算，那么有会得到一个输出特征矩阵。将这些输出特征矩阵进行拼接那么就能得到完整的输出特征矩阵。 </p>
+<ul>
+<li>卷积核的深度（channel）与输入特征层的深度（channel）要相同：如图，输入的是三维的，那么卷积核也要是三维的。</li>
+<li>输出的特征矩阵深度（channel）与卷积核个数相同：因为如图，每个卷积核都会生成一个输出特征矩阵。</li>
+</ul>
+<p><strong>如果加上偏移量bias那么该怎么计算呢</strong></p>
+<p>只需要与对应的输出特征矩阵相加运算。例如上面卷积核1的偏移量为-1，那么结果就是<script type="math/tex">\begin{matrix}0&2\\0&0\end{matrix}</script>,也就是在原本的结果上加上一个偏置项（偏移量）。卷积核2的偏移量为1，那么结果就是<script type="math/tex">\begin{matrix}2&2\\3&2 \end{matrix}</script></p>
+<p><strong>如果加上激活函数，那么又该如何进行计算呢？</strong></p>
+<p>下面是两个常用的激活函数：</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201220705581.png" alt="image-20211201220705581" style="zoom: 33%;"></p>
+<p>首先要明白<strong>为什么要使用激活函数</strong>，是因为在我们的计算过程中这是一个线性的计算过程。引入非线性因素，使其具备解决非线性问题的能力，那么就需要通过一个非线性函数来达到这个目的。</p>
+<p>现在常用的是Relu激活函数，因为，Sigmoid激活函数<strong>达到饱和时梯度值变得非常小</strong>，当值越来越大的时候，导数就基本<strong>趋于0</strong>了。所以当网络层数较深时容易出现<strong>梯度消失</strong>，在反向传播误差的过程中导数求起来也会很麻烦。</p>
+<p>Relu函数的<strong>导数就非常简单</strong>，当$x$小于0的时候，导数就等于0，当$x&gt;0$的时候，导数就是等于1。但它同时也有缺点，在反向传播过程中有一个<strong>非常大的梯度经过</strong>时，反向传播更新后可能会导致<strong>权重分布中心小于0</strong>，在进行正向传播时就可能会导致计算出的<strong>结果是一个小于0的数</strong>，如果小于0的话，那么经过Relu激活函数时就会<strong>被过滤掉</strong>，它的值就会始终等于0，这样它的反向传播就无法更新权重了。$x&lt;0$的梯度都为0了，反向传播过程中就无法往前进行传播了，而且<strong>权重进入失活</strong>，并且失活后就无法再被激活的。所以在训练过程当中，不要一开始就使用一个特别大的学习率进行学习，这样很可能会导致很多神经元失活。</p>
+<p><strong>如果卷积过程中出现越界时再怎么去处理？</strong></p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201223322907.png" alt="image-20211201223322907" style="zoom: 33%;"></p>
+<p>如图出现越界问题时，一般通过padding的方式进行补0处理</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211201223529902.png" alt="image-20211201223529902" style="zoom:33%;"></p>
+<p>在卷积操作过程中，矩阵经卷积操作后的尺寸由以下几个因素决定：</p>
+<ul>
+<li>输入图片大小$W \times W$：图中为$4\times4$的大小</li>
+<li>Filter（过滤器）的大小$F \times F$ ：图中为$3\times3$的大小</li>
+<li>步长S：图中为2</li>
+<li>padding的像素数P： 正常是左右上下各补1个P，一共2P，图中只在右边和下边补了一个P</li>
+</ul>
+<p>经卷积后的矩阵尺寸大小计算公式为：</p>
+<script type="math/tex; mode=display">
+N=\frac{W-F+P}{S+1}
+ =\frac{4-3+1}{2+1}
+ =2</script><p>所以最终得到的特征矩阵的大小就为2.</p>
+<h3 id="1-1-3-池化层"><a href="#1-1-3-池化层" class="headerlink" title="1.1.3 池化层"></a>1.1.3 池化层</h3><p><strong>池化层的目的</strong>是对特征图进行稀疏处理，减少数据运算量。</p>
+<p>池化层和卷积层比较类似，但是与卷积层相比较会简单许多。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211202130739275.png" alt="image-20211202130739275" style="zoom: 33%;"></p>
+<p>如上图就是用一个$2\times2$的池化核进行<strong>最大下采样</strong>操作，将这个池化核放在左图的第一个位置上，然后找$\begin{matrix}1&amp;1\5&amp;6 \end{matrix}$中的<strong>最大值</strong>，也就是6，于是右边输出的第一个位置就填6.</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211202131259074.png" alt="image-20211202131259074" style="zoom:33%;"></p>
+<p>如图是一个<strong>平均下采样层</strong>操作，与上面所说的最大下采样层最大的区别就是，拿第一个位置举例就是它是找$\begin{matrix}1&amp;1\5&amp;6 \end{matrix}$这几个数的<strong>平均值</strong>，将平均值3.25作为输出。</p>
+<p><strong>池化层</strong>拥有以下几个<strong>特点</strong>：</p>
+<ul>
+<li><p>没有训练参数</p>
+<p>卷积层的每个卷积核都会有自己的参数，像前面提到的RGB例子，每个卷积核都会有R G B三个参数。而池化层则没有参数，它只是在原本的特征层上求最大值或者平均数，也就不需要训练参数。</p>
+</li>
+<li><p>只改变特征矩阵的w和h，不改变深度（channel）</p>
+<p>就如上图所示是一个$4\times4$的特征层、深度为3，用一个$2\times2$、步距（stride）为2的池化核进行计算，那么最后得到的会是一个$2\times2$、深度为3的结果。</p>
+</li>
+<li><p>一般池化核大小（poolsize）和步距（stride）相同，并不是绝对的。</p>
+</li>
+</ul>
+<h3 id="1-1-4-误差的计算"><a href="#1-1-4-误差的计算" class="headerlink" title="1.1.4 误差的计算"></a>1.1.4 误差的计算</h3><p>以下面一个三层的BP神经网络为例</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211204164844141.png" alt="image-20211204164844141" style="zoom:33%;"></p>
+<p>从左往右，第一层就是输入层，有两个节点：$x_1$和$x_2$。中间为隐层，有三个节点，其中以最上面的节点为例：</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211204165138340.png" alt="image-20211204165138340" style="zoom:33%;"></p>
+<p>最上面这个节点的输出就是$x<em>1$乘以它对应的权重$w</em>{11}$加上$x<em>2$乘以它对应的权重$w</em>{21}$，最后加上偏置$b_1$.通过激活函数$σ$就得到了隐层的第一个节点的输出。</p>
+<p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211204165831311.png" alt="image-20211204165831311" style="zoom: 33%;"></p>
+<p>同理如上图，可以求出$y_1$和$y_2$的输出，最后一层一般用的是softmax激活函数。</p>
+<p>因为输出的$y_1$、$y_2$不属于任意一个分布，而我们想要它<strong>满足概率分布</strong>，所以要进行softmax处理。</p>
+<p>计算表达式如下：</p>
+<script type="math/tex; mode=display">
+o_{i}=\frac{e^{y_{i}}}{\sum_{j} e^{y_{j}}}</script><p>根据表达式计算出来的结果如下：</p>
+<script type="math/tex; mode=display">
+o_{1}=\frac{e^{y_{1}}}{e^{y_{1}}+e^{y_{2}}} \quad o_{2}=\frac{e^{y_{2}}}{e^{y_{1}}+e^{y_{2}}}</script><p>经过softmax处理后的所有输出节点<strong>概率和为1，</strong>即$o_1+o_2=1$。</p>
+<p>进行<strong>交叉熵损失（Cross Entropy Loss）</strong>的计算时，针对不同问题，会有不同种的计算方法。</p>
+<ol>
+<li><p>针对多分类问题（softmax输出，所有输出概率和为1）</p>
+<script type="math/tex; mode=display">
+H=-{\sum}_io^*_ilog(o_i)</script><p>大部分用的都是这一个，它的输出只会归为某一个类别。比如要么是猫要么是狗，不可能同时为多个。</p>
+</li>
+<li><p>针对二分类问题（sigmoid输出，每个输出节点之间互不相干）</p>
+<script type="math/tex; mode=display">
+H=-\frac{1}{N} \sum_{i=1}^{N}\left[o_{i}^{*} \log o_{i}+\left(1-o_{i}^{*}\right) \log \left(1-o_{i}\right)\right]</script></li>
+<li></li>
+</ol>
+<p>其中$o^*_i$为真实标签值，$o_i$为预测值，默认$log$以$e$为底等于$ln$</p>
+<p>本例中是使用softmax激活函数，代入计算公式可以得到损失值：</p>
+<script type="math/tex; mode=display">
+Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"><a href="#1-1-5-误差的反向传播" class="headerlink" title="1.1.5 误差的反向传播"></a>1.1.5 误差的反向传播</h3><p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211208111742495.png" alt="image-20211208111742495" style="zoom: 33%;"></p>
+<p>以求<script type="math/tex">w_{11}^{(2)}</script>的误差梯度为例进行说明。它的<script type="math/tex">损失值Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script>,<script type="math/tex">\begin{aligned}概率o_{1}=\frac{e^{y_{1}}}{e^{y_{1}}+e^{y_{2}}}\end{aligned}</script></p>
+<script type="math/tex; mode=display">\begin{aligned} 输出y_{1}=w_{11}^{(2)} \cdot \sigma\left(x_{1} \cdot w_{11}^{(1)}+x_{2} \cdot w_{21}^{(1)}+b_{1}^{(1)}\right)+\\w_{21}^{(2)} \cdot \sigma\left(x_{1} \cdot w_{12}^{(1)}+x_{2} \cdot w_{22}^{(1)}+b_{2}^{(1)}\right)+\\w_{31}^{(2)} \cdot \sigma\left(x_{1} \cdot w_{13}^{(1)}+x_{2} \cdot w_{23}^{(1)}+b_{3}^{(1)}\right)+\\b_{1}^{(2)}\end{aligned}</script><p>因为我们需要对<script type="math/tex">w_{11}^{(2)}</script>求损失梯度，那么上一个节点的输入<script type="math/tex">\sigma\left(x_{1} \cdot w_{11}^{(1)}+x_{2} \cdot w_{21}^{(1)}+b_{1}^{(1)}\right)</script>就可以看成一个常数进行处理，方便后续的计算。于是<script type="math/tex">输出y_{1}=w_{11}^{(2)} \cdot \alpha_1+w_{21}^{(2)} \cdot \alpha_2+w_{31}^{(2)} \cdot \alpha_3+b_{1}^{(2)}</script>.</p>
+<p>求它的误差梯度也就是用损失值对它求偏导，于是<script type="math/tex">\begin{aligned}偏导数\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} =\frac{\partial L o s s}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} =\left(\frac{\partial L o s s}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial L o s s}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}}
+\end{aligned}</script></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Aik</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/11/03/shen-du-xue-xi-zai-tu-xiang-chu-li-zhong-de-ying-yong/">http://example.com/2021/11/03/shen-du-xue-xi-zai-tu-xiang-chu-li-zhong-de-ying-yong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Aik</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/">
+                                    <span class="chip bg-color">图像处理</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">深度学习</span>
+                                </a>
+                            
+                                <a href="/tags/PyTorch/">
+                                    <span class="chip bg-color">PyTorch</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/11/08/psrs-pai-xu/">
+                    <div class="card-image">
+                        
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="使用C++实现PSRS排序的并行计算">
+                        
+                        <span class="card-title">使用C++实现PSRS排序的并行计算</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用PSRS排序算法进行并行计算
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/" class="post-category">
+                                    并行计算
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                    <a href="/tags/PSRS/">
+                        <span class="chip bg-color">PSRS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/10/29/git-cai-keng-ji-lu/">
+                    <div class="card-image">
+                        
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="Git踩坑记录">
+                        
+                        <span class="card-title">Git踩坑记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            记录了Git使用过程中遇到的一些问题
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <!-- <span id="year">2021</span>
+            <a href="/about" target="_blank">Aik</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br> -->
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">11.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "10";
+                    var startDate = "18";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/aik-n" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xwy19971118@126.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1020707983" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1020707983" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+   
+
+</body>
+
+</html>

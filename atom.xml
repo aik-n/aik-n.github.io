@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-12-08T08:16:53.691Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Aik</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo部署在阿里云服务器</title>
+    <link href="http://example.com/2021/12/06/hexo-bu-shu-zai-a-li-yun-fu-wu-qi/"/>
+    <id>http://example.com/2021/12/06/hexo-bu-shu-zai-a-li-yun-fu-wu-qi/</id>
+    <published>2021-12-05T16:00:00.000Z</published>
+    <updated>2021-12-08T08:16:53.691Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;1-准备工作&quot;&gt;&lt;a href=&quot;#1-准备工作&quot; class=&quot;headerlink&quot; title=&quot;1.准备工作&quot;&gt;&lt;/a&gt;1.准备工作&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;购买阿里云的ECS服务器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;注册一个域名&lt;br&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="云服务器" scheme="http://example.com/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown数学公式</title>
+    <link href="http://example.com/2021/12/05/markdown-shu-xue-gong-shi/"/>
+    <id>http://example.com/2021/12/05/markdown-shu-xue-gong-shi/</id>
+    <published>2021-12-04T16:00:00.000Z</published>
+    <updated>2021-12-08T08:47:17.500Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;符号&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;符号&lt;/th&gt;
+&lt;th</summary>
+        
+      
+    
+    
+    
+    <category term="markdown" scheme="http://example.com/categories/markdown/"/>
+    
+    
+    <category term="markdown" scheme="http://example.com/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用C++实现PSRS排序的并行计算</title>
+    <link href="http://example.com/2021/11/08/psrs-pai-xu/"/>
+    <id>http://example.com/2021/11/08/psrs-pai-xu/</id>
+    <published>2021-11-07T16:00:00.000Z</published>
+    <updated>2021-12-05T02:34:28.258Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用C-实现PSRS排序的并行计算&quot;&gt;&lt;a href=&quot;#使用C-实现PSRS排序的并行计算&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="并行计算" scheme="http://example.com/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="C++" scheme="http://example.com/tags/C/"/>
+    
+    <category term="PSRS" scheme="http://example.com/tags/PSRS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习在图像处理中的应用</title>
+    <link href="http://example.com/2021/11/03/shen-du-xue-xi-zai-tu-xiang-chu-li-zhong-de-ying-yong/"/>
+    <id>http://example.com/2021/11/03/shen-du-xue-xi-zai-tu-xiang-chu-li-zhong-de-ying-yong/</id>
+    <published>2021-11-02T16:00:00.000Z</published>
+    <updated>2021-12-08T08:43:49.633Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;深度学习在图像处理中的应用&quot;&gt;&lt;a href=&quot;#深度学习在图像处理中的应用&quot; class=&quot;headerlink&quot; title=&quot;深度学习在图像处理中的应用&quot;&gt;&lt;/a&gt;深度学习在图像处理中的应用&lt;/h1&gt;&lt;p&gt;包括图像分类（AlexNet，VGGNet，GoogLeNet，ResNet）、目标检测以及图像分割等等，使用pytorch进行实现。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="http://example.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="图像处理" scheme="http://example.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+    <category term="深度学习" scheme="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="PyTorch" scheme="http://example.com/tags/PyTorch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git踩坑记录</title>
+    <link href="http://example.com/2021/10/29/git-cai-keng-ji-lu/"/>
+    <id>http://example.com/2021/10/29/git-cai-keng-ji-lu/</id>
+    <published>2021-10-28T16:00:00.000Z</published>
+    <updated>2021-10-29T15:13:55.574Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Git踩坑记录&quot;&gt;&lt;a href=&quot;#Git踩坑记录&quot; class=&quot;headerlink&quot; title=&quot;Git踩坑记录&quot;&gt;&lt;/a&gt;Git踩坑记录&lt;/h1&gt;&lt;h3 id=&quot;gitgnore文件&quot;&gt;&lt;a href=&quot;#gitgnore文件&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="http://example.com/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python机器学习入门</title>
+    <link href="http://example.com/2021/10/21/python-ji-qi-xue-xi/"/>
+    <id>http://example.com/2021/10/21/python-ji-qi-xue-xi/</id>
+    <published>2021-10-20T16:00:00.000Z</published>
+    <updated>2021-12-08T06:55:43.085Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;机器学习就是通过算法让计算机能够从数据中提取出有用的信息，并且能够按我们的需要对它进行决策判断，最后得到我们希望得到的结果，也就是从数据-模型-预测的一个过程。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="机器学习" scheme="http://example.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Python" scheme="http://example.com/tags/Python/"/>
+    
+    <category term="机器学习" scheme="http://example.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo搭建及维护</title>
+    <link href="http://example.com/2021/10/20/hexo-da-jian-ji-wei-hu/"/>
+    <id>http://example.com/2021/10/20/hexo-da-jian-ji-wei-hu/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-06T14:00:16.045Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基于Hexo的博客搭建及维护&quot;&gt;&lt;a href=&quot;#基于Hexo的博客搭建及维护&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="node.js" scheme="http://example.com/tags/node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo踩坑记录</title>
+    <link href="http://example.com/2021/10/20/hexo-cai-keng-ji-lu/"/>
+    <id>http://example.com/2021/10/20/hexo-cai-keng-ji-lu/</id>
+    <published>2021-10-19T16:00:00.000Z</published>
+    <updated>2021-12-08T08:29:40.138Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;hexo使用theme出现&lt;code&gt;“ {% extends ‘_layout.swig‘ %} {% import ‘_macro/post.swig‘ as post_template</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+    <category term="node.js" scheme="http://example.com/tags/node-js/"/>
+    
+  </entry>
+  
+</feed>
