@@ -590,6 +590,7 @@ Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"
 <p>求它的误差梯度也就是用损失值对它求偏导，于是根据链式求导法则<script type="math/tex">\begin{aligned}偏导数\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} =\frac{\partial L o s s}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} =\left(\frac{\partial L o s s}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial L o s s}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}}
 \end{aligned}</script></p>
 <p>默认log代表以e为底</p>
+<p>求解（1）式各个偏导数可得：</p>
 <script type="math/tex; mode=display">
 \begin{align}
 &\frac{\partial L o s s}{\partial o_{1}}=-o_{1}^{*} \cdot \frac{1}{o_{1}} \quad \frac{\partial L o s s}{\partial o_{2}}=-o_{2}^{*} \cdot \frac{1}{o_{2}}\\
@@ -598,12 +599,13 @@ Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"
 &\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}
 \end{align}</script><p>将上述求得的结果代入到（1）式中去可以得到：</p>
 <script type="math/tex; mode=display">
-\begin{align}
+\begin{flalign}
 \frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} &=\frac{\partial \text { Loss }}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} \\
 &=\left(\frac{\partial \text { Loss }}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial \text { Loss }}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} \\
 &=\left[-o_{1}^{*} \cdot \frac{1}{o_{1}} \cdot o_{1} \cdot o_{2}-o_{2}^{*} \cdot \frac{1}{o_{2}} \cdot\left(-o_{1} \cdot o_{2}\right)\right] \cdot a_{1} \\
 &=\left(o_{2}^{*} \cdot o_{1}-o_{1}^{*} \cdot o_{2}\right) \cdot a_{1}
-\end{align}</script>
+\end{flalign}</script><script type="math/tex; mode=display">
+</script>
                 
             </div>
             <hr/>
