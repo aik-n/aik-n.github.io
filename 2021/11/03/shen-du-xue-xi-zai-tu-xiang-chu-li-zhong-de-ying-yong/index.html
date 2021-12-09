@@ -437,14 +437,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.7k
+                    3.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -580,7 +580,6 @@ H=-{\sum}_io^*_ilog(o_i)</script><p>大部分用的都是这一个，它的输�
 <li><p>针对二分类问题（sigmoid输出，每个输出节点之间互不相干）</p>
 <script type="math/tex; mode=display">
 H=-\frac{1}{N} \sum_{i=1}^{N}\left[o_{i}^{*} \log o_{i}+\left(1-o_{i}^{*}\right) \log \left(1-o_{i}\right)\right]</script></li>
-<li></li>
 </ol>
 <p>其中$o^*_i$为真实标签值，$o_i$为预测值，默认$log$以$e$为底等于$ln$</p>
 <p>本例中是使用softmax激活函数，代入计算公式可以得到损失值：</p>
@@ -594,9 +593,16 @@ Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"
 <script type="math/tex; mode=display">
 \begin{align}
 &\frac{\partial L o s s}{\partial o_{1}}=-o_{1}^{*} \cdot \frac{1}{o_{1}} \quad \frac{\partial L o s s}{\partial o_{2}}=-o_{2}^{*} \cdot \frac{1}{o_{2}}\\
-&\frac{\partial o_{1}}{\partial y_{1}}=\frac{\partial\left(\frac{e^{y_{1}}}{e^{y_{1}}}+e^{y_{2}}\right)}{\partial y_{1}}=\frac{\partial\left(1-\frac{e^{y_{2}}}{e^{y_{1}}}+e^{y_{2}}\right)}{\partial y_{1}}=\frac{e^{y_{2}}}{\left(e^{y_{1}}+e^{y_{2}}\right)^{2}} \cdot e^{y_{1}}=o_{1} \cdot o_{2}=o_{1} \cdot\left(1-o_{1}\right)\\
+&\frac{\partial o_{1}}{\partial y_{1}}=\frac{\partial\left(\frac{e^{y_{1}}}{e^{y_{1}}+e^{y_{2}}}\right)}{\partial y_{1}}=\frac{\partial\left(1-\frac{e^{y_{2}}}{e^{y_{1}}+e^{y_{2}}}\right)}{\partial y_{1}}=\frac{e^{y_{2}}}{\left(e^{y_{1}}+e^{y_{2}}\right)^{2}} \cdot e^{y_{1}}=o_{1} \cdot o_{2}=o_{1} \cdot\left(1-o_{1}\right)\\
 &\frac{\partial o_{2}}{\partial y_{1}}=\frac{\partial\left(\frac{e^{y_{2}}}{e^{y_{1}}+e^{y_{2}}}\right)}{\partial y_{1}}=-\frac{e^{y_{2}}}{\left(e^{y_{1}}+e^{y_{2}}\right)^{2}} e^{y_{1}}=-o_{1} \cdot o_{2}=o_{1} \cdot\left(o_{1}-1\right) \\
 &\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}
+\end{align}</script><p>将上述求得的结果代入到（1）式中去可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} &=\frac{\partial \text { Loss }}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} \\
+&=\left(\frac{\partial \text { Loss }}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial \text { Loss }}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} \\
+&=\left[-o_{1}^{*} \cdot \frac{1}{o_{1}} \cdot o_{1} \cdot o_{2}-o_{2}^{*} \cdot \frac{1}{o_{2}} \cdot\left(-o_{1} \cdot o_{2}\right)\right] \cdot a_{1} \\
+&=\left(o_{2}^{*} \cdot o_{1}-o_{1}^{*} \cdot o_{2}\right) \cdot a_{1}
 \end{align}</script>
                 
             </div>
@@ -1013,7 +1019,7 @@ Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.9k</span>&nbsp;字
+                class="white-color">12.1k</span>&nbsp;字
             
             
             
