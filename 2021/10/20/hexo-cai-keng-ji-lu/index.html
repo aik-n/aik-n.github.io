@@ -437,7 +437,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    116
+                    148
                 </div>
                 
 
@@ -479,7 +479,8 @@ FATAL {
       at Object._prettifyError (D:\DataSource\blog\node_modules\nunjucks\src\lib.js:36:11)
       at D:\DataSource\blog\node_modules\nunjucks\src\environment.js:563:19
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>多半是因为markdown文件中有大括号，要么不用，要么\lbrace和\rbrace</p>
+<p>多半是因为markdown文件中有大括号，要么不用，要么\lbrace和\rbrace，要么转义字符&amp;#123、&amp;#125</p>
+<p>如果是数学公式中用到，那么直接用代码段````括起来吧。</p>
 
                 
             </div>
@@ -909,7 +910,7 @@ FATAL {
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.8k</span>&nbsp;字
+                class="white-color">11.9k</span>&nbsp;字
             
             
             

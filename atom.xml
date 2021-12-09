@@ -51,19 +51,19 @@
     <link href="http://example.com/2021/12/05/markdown-shu-xue-gong-shi/"/>
     <id>http://example.com/2021/12/05/markdown-shu-xue-gong-shi/</id>
     <published>2021-12-04T16:00:00.000Z</published>
-    <updated>2021-12-09T04:56:13.939Z</updated>
+    <updated>2021-12-09T05:46:25.656Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;&lt;strong&gt;符号&lt;/strong&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;strong&gt;行内公式尽量也使用$$,不要用单个$&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;符号&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&quot;table-container&quot;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;符号&lt;/th&gt;
 &lt;th</summary>
         
       
@@ -207,7 +207,7 @@
     <link href="http://example.com/2021/10/20/hexo-cai-keng-ji-lu/"/>
     <id>http://example.com/2021/10/20/hexo-cai-keng-ji-lu/</id>
     <published>2021-10-19T16:00:00.000Z</published>
-    <updated>2021-12-09T04:59:37.880Z</updated>
+    <updated>2021-12-09T05:05:44.637Z</updated>
     
     
       

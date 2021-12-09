@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    153
+                    277
                 </div>
                 
 
@@ -459,7 +459,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>符号</strong></p>
+                <p><strong>行内公式尽量也使用$$,不要用单个$</strong></p>
+<p><strong>符号</strong></p>
 <div class="table-container">
 <table>
 <thead>
@@ -500,11 +501,11 @@
 <tbody>
 <tr>
 <td style="text-align:center"><script type="math/tex">\begin{matrix}0&2\\0&0\end{matrix}</script></td>
-<td style="text-align:center">\begin{matrix}0&amp;2\0&amp;0\end{matrix}</td>
+<td style="text-align:center"><code>\begin{matrix}0&amp;2\\0&amp;0\end{matrix}</code></td>
 </tr>
 <tr>
 <td style="text-align:center"><script type="math/tex">\left[\begin{matrix}0&2\\0&0\end{matrix}\right]</script></td>
-<td style="text-align:center">\left[\begin{matrix}0&amp;2\0&amp;0\end{matrix}\right]</td>
+<td style="text-align:center"><code>\left[\begin{matrix}0&amp;2\\0&amp;0\end{matrix}\right]</code></td>
 </tr>
 </tbody>
 </table>
@@ -549,16 +550,28 @@
 <tbody>
 <tr>
 <td style="text-align:center">第一种方式</td>
-<td style="text-align:center">\begin{array}{l}中间内容\end{array} 中间的l,r,c表示左右中</td>
+<td style="text-align:center"><code>\begin{array}{l}中间内容\end{array} 中间的l,r,c表示左右中</code></td>
 </tr>
 <tr>
 <td style="text-align:center">第二种方式（推荐）</td>
-<td style="text-align:center">\begin&amp;#123align&amp;#125 \end&amp;#123align&amp;#125中间正常使用\\进行换行，用&amp;确定对齐的位置</td>
+<td style="text-align:center"><code>\begin{align} \end{align}中间正常使用\\进行换行，用&amp;确定对齐的位置</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p><strong>行内公式尽量也使用$$</strong></p>
+<p>第一种效果：</p>
+<script type="math/tex; mode=display">\begin{array}{l}&cdot o_{2}=o_{1} \cdot\left(o_{1}-1\right) \\
+&\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}\end{array}</script><pre class="line-numbers language-none"><code class="language-none">$$
+\begin{array}{l}&amp;cdot o_{2}=o_{1} \cdot\left(o_{1}-1\right) \\
+&amp;\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}\end{array}
+$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二种效果：</p>
+<script type="math/tex; mode=display">\begin{align}&cdot o_{2}=o_{1} \cdot\left(o_{1}-1\right) \\
+&\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}\end{align}</script><pre class="line-numbers language-none"><code class="language-none">$$
+\begin{align}&amp;cdot o_{2}=o_{1} \cdot\left(o_{1}-1\right) \\
+&amp;\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}\end{align}
+$$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>还是更推荐用第二种</p>
 
                 
             </div>
@@ -971,7 +984,7 @@
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.8k</span>&nbsp;字
+                class="white-color">11.9k</span>&nbsp;字
             
             
             
