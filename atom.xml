@@ -47,11 +47,11 @@
   </entry>
   
   <entry>
-    <title>markdown数学公式</title>
+    <title>Markdown数学公式</title>
     <link href="http://example.com/2021/12/05/markdown-shu-xue-gong-shi/"/>
     <id>http://example.com/2021/12/05/markdown-shu-xue-gong-shi/</id>
     <published>2021-12-04T16:00:00.000Z</published>
-    <updated>2021-12-08T08:47:17.500Z</updated>
+    <updated>2021-12-09T04:56:13.939Z</updated>
     
     
       
@@ -70,10 +70,10 @@
     
     
     
-    <category term="markdown" scheme="http://example.com/categories/markdown/"/>
+    <category term="Markdown" scheme="http://example.com/categories/Markdown/"/>
     
     
-    <category term="markdown" scheme="http://example.com/tags/markdown/"/>
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
     
   </entry>
   
@@ -109,7 +109,7 @@
     <link href="http://example.com/2021/11/03/shen-du-xue-xi-zai-tu-xiang-chu-li-zhong-de-ying-yong/"/>
     <id>http://example.com/2021/11/03/shen-du-xue-xi-zai-tu-xiang-chu-li-zhong-de-ying-yong/</id>
     <published>2021-11-02T16:00:00.000Z</published>
-    <updated>2021-12-08T08:43:49.633Z</updated>
+    <updated>2021-12-09T04:50:39.985Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;深度学习在图像处理中的应用&quot;&gt;&lt;a href=&quot;#深度学习在图像处理中的应用&quot; class=&quot;headerlink&quot; title=&quot;深度学习在图像处理中的应用&quot;&gt;&lt;/a&gt;深度学习在图像处理中的应用&lt;/h1&gt;&lt;p&gt;包括图像分类（AlexNet，VGGNet，GoogLeNet，ResNet）、目标检测以及图像分割等等，使用pytorch进行实现。&lt;/p&gt;</summary>

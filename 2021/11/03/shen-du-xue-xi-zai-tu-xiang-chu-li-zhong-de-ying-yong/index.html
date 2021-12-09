@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
 </head>
 
 
@@ -430,21 +430,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-08
+                    2021-12-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    3.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
 
@@ -588,9 +588,16 @@ H=-\frac{1}{N} \sum_{i=1}^{N}\left[o_{i}^{*} \log o_{i}+\left(1-o_{i}^{*}\right)
 Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"><a href="#1-1-5-误差的反向传播" class="headerlink" title="1.1.5 误差的反向传播"></a>1.1.5 误差的反向传播</h3><p><img src="https://hexo0.oss-cn-shanghai.aliyuncs.com/blog/img/image-20211208111742495.png" alt="image-20211208111742495" style="zoom: 33%;"></p>
 <p>以求<script type="math/tex">w_{11}^{(2)}</script>的误差梯度为例进行说明。它的<script type="math/tex">损失值Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script>,<script type="math/tex">\begin{aligned}概率o_{1}=\frac{e^{y_{1}}}{e^{y_{1}}+e^{y_{2}}}\end{aligned}</script></p>
 <script type="math/tex; mode=display">\begin{aligned} 输出y_{1}=w_{11}^{(2)} \cdot \sigma\left(x_{1} \cdot w_{11}^{(1)}+x_{2} \cdot w_{21}^{(1)}+b_{1}^{(1)}\right)+\\w_{21}^{(2)} \cdot \sigma\left(x_{1} \cdot w_{12}^{(1)}+x_{2} \cdot w_{22}^{(1)}+b_{2}^{(1)}\right)+\\w_{31}^{(2)} \cdot \sigma\left(x_{1} \cdot w_{13}^{(1)}+x_{2} \cdot w_{23}^{(1)}+b_{3}^{(1)}\right)+\\b_{1}^{(2)}\end{aligned}</script><p>因为我们需要对<script type="math/tex">w_{11}^{(2)}</script>求损失梯度，那么上一个节点的输入<script type="math/tex">\sigma\left(x_{1} \cdot w_{11}^{(1)}+x_{2} \cdot w_{21}^{(1)}+b_{1}^{(1)}\right)</script>就可以看成一个常数进行处理，方便后续的计算。于是<script type="math/tex">输出y_{1}=w_{11}^{(2)} \cdot \alpha_1+w_{21}^{(2)} \cdot \alpha_2+w_{31}^{(2)} \cdot \alpha_3+b_{1}^{(2)}</script>.</p>
-<p>求它的误差梯度也就是用损失值对它求偏导，于是<script type="math/tex">\begin{aligned}偏导数\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} =\frac{\partial L o s s}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} =\left(\frac{\partial L o s s}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial L o s s}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}}
+<p>求它的误差梯度也就是用损失值对它求偏导，于是根据链式求导法则<script type="math/tex">\begin{aligned}偏导数\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} =\frac{\partial L o s s}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} =\left(\frac{\partial L o s s}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial L o s s}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}}
 \end{aligned}</script></p>
-
+<p>默认log代表以e为底</p>
+<script type="math/tex; mode=display">
+\begin{align}
+&\frac{\partial L o s s}{\partial o_{1}}=-o_{1}^{*} \cdot \frac{1}{o_{1}} \quad \frac{\partial L o s s}{\partial o_{2}}=-o_{2}^{*} \cdot \frac{1}{o_{2}}\\
+&\frac{\partial o_{1}}{\partial y_{1}}=\frac{\partial\left(\frac{e^{y_{1}}}{e^{y_{1}}}+e^{y_{2}}\right)}{\partial y_{1}}=\frac{\partial\left(1-\frac{e^{y_{2}}}{e^{y_{1}}}+e^{y_{2}}\right)}{\partial y_{1}}=\frac{e^{y_{2}}}{\left(e^{y_{1}}+e^{y_{2}}\right)^{2}} \cdot e^{y_{1}}=o_{1} \cdot o_{2}=o_{1} \cdot\left(1-o_{1}\right)\\
+&\frac{\partial o_{2}}{\partial y_{1}}=\frac{\partial\left(\frac{e^{y_{2}}}{e^{y_{1}}+e^{y_{2}}}\right)}{\partial y_{1}}=-\frac{e^{y_{2}}}{\left(e^{y_{1}}+e^{y_{2}}\right)^{2}} e^{y_{1}}=-o_{1} \cdot o_{2}=o_{1} \cdot\left(o_{1}-1\right) \\
+&\frac{\partial y_{1}}{\partial w_{11}^{(2)}}=a_{1}
+\end{align}</script>
                 
             </div>
             <hr/>
@@ -1006,7 +1013,7 @@ Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"
             <br> -->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.5k</span>&nbsp;字
+                class="white-color">11.8k</span>&nbsp;字
             
             
             
