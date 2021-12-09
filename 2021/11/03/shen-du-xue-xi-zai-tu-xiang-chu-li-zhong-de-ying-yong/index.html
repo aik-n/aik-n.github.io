@@ -600,9 +600,9 @@ Loss=-(o_1^*log(o_1)+o_2^*log(o_2))</script><h3 id="1-1-5-误差的反向传播"
 \end{align}</script><p>将上述求得的结果代入到（1）式中去可以得到：</p>
 <script type="math/tex; mode=display">
 \begin{flalign}
-\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} &=\frac{\partial \text { Loss }}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} \\
-&=\left(\frac{\partial \text { Loss }}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial \text { Loss }}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} \\
-&=\left[-o_{1}^{*} \cdot \frac{1}{o_{1}} \cdot o_{1} \cdot o_{2}-o_{2}^{*} \cdot \frac{1}{o_{2}} \cdot\left(-o_{1} \cdot o_{2}\right)\right] \cdot a_{1} \\
+\frac{\partial \text { Loss }}{\partial w_{11}^{(2)}} &=\frac{\partial \text { Loss }}{\partial y_{1}} \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} &\\
+&=\left(\frac{\partial \text { Loss }}{\partial o_{1}} \cdot \frac{\partial o_{1}}{\partial y_{1}}+\frac{\partial \text { Loss }}{\partial o_{2}} \cdot \frac{\partial o_{2}}{\partial y_{1}}\right) \cdot \frac{\partial y_{1}}{\partial w_{11}^{(2)}} &\\
+&=\left[-o_{1}^{*} \cdot \frac{1}{o_{1}} \cdot o_{1} \cdot o_{2}-o_{2}^{*} \cdot \frac{1}{o_{2}} \cdot\left(-o_{1} \cdot o_{2}\right)\right] \cdot a_{1} &\\
 &=\left(o_{2}^{*} \cdot o_{1}-o_{1}^{*} \cdot o_{2}\right) \cdot a_{1}
 \end{flalign}</script><script type="math/tex; mode=display">
 </script>
